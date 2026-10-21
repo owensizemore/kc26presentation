@@ -76,6 +76,8 @@ Consider replacing this with a spectrum, with option a on the left and option b 
 - <span v-mark.underline.blue="5">Tools with guardrails that scaffold learning and mitigate irresponsible GenAI use</span>
 
 ---
+autoClicks: false
+---
 
 # Research Questions
 1. **RQ1**: What approaches are currently used to build GenAI-powered postsecondary CSEd tools, and how are they motivated?
