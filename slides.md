@@ -87,7 +87,7 @@ autoClicks: false
 <!--Bold these-->
 ---
 
-## Literature Review Methodology
+## Literature Review Methodology (PRISMA)
 
 <div class="w-full flex justify-center">
 
@@ -104,7 +104,7 @@ flowchart TD
 
 ---
 
-## Codebook
+## Codebook Categories
 
 <div class="card-grid">
 
@@ -186,6 +186,8 @@ flowchart TD
 </style>
 
 ---
+autoClicks: false
+---
 
 # Motivations for building tools (RQ1)
 
@@ -194,19 +196,30 @@ flowchart TD
 - 38%: Lack of scalable help-seeking in CS classrooms
 
 ---
+autoClicks: false
+---
 
 # Tool features and approaches (RQ1)
+
+<div>
+
+**Features**
+
+</div>
 
 - 81%: Scaffolded feedback so the tool doesn’t give away answers
 - 57%: Adapt feedback to students’ prior interactions
 - 25%: Ground responses in curated learning material
 
+**Delivery method**
 - 63% of tools delivered via a standalone web app, others embedded in course platforms or packaged as IDE extensions
 
 <!--
 Some of these bullets need qualifying examples
 Is there a way to make the (RQ1) text smaller?
 -->
+---
+autoClicks: false
 ---
 
 # Educational Framings (RQ2)
@@ -223,6 +236,8 @@ Is there a way to make the (RQ1) text smaller?
 Potentially split this into 2 slides
 -->
 ---
+autoClicks: false
+---
 
 # Evaluation Goals (RQ3)
 
@@ -232,18 +247,20 @@ Potentially split this into 2 slides
   - Many examples: 
     - Post-intervention test performance
     - Changes between pre- and post-test scores
-    - Measurements of affective state (self-efficacy, nervousness, etc.)
+    - Measurements of impact on students (self-efficacy, nervousness, etc.)
 
 <!--
 Include references?
 -->
+---
+autoClicks: false
 ---
 
 # Evaluation Methods (RQ3)
 
 - Post-surveys and logging usage data both common and frequently done together (also relatively easy to perform)
 - 38% of papers that included post-surveys also included pre-surveys
-  - Less emphasis on measuring changes, just want to understand how students like the tool
+  - Less emphasis on measuring changes, just want to understand how students felt about the tool
 - Multiple evaluation methods were common
   - 69% of papers used between 2 and 4 methods
   - 42 distinct combinations of evaluation methods
