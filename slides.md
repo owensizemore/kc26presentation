@@ -6,6 +6,7 @@ title: Presentation Title
 # GenAI-Powered Postsecondary Computer Science Education Tools
 ## A Systematic Literature Review
 
+<!--
 <div class="authors">
   <div class="author">
     <div class="author-name">Owen Sizemore</div>
@@ -34,13 +35,13 @@ title: Presentation Title
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .author {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.45rem;
   width: 18%;
 }
 .author-name {
@@ -50,10 +51,22 @@ title: Presentation Title
   text-align: center;
 }
 .author img {
-  width: 4.25rem;
-  height: 4.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
   object-fit: contain;
 }   
+</style>
+-->
+
+<p class="authors-line"><strong>Owen Sizemore</strong>, Seth Bernstein, Audrey Ostrom, Thomas Rexin, Kristin Stephens-Martinez</p>
+
+<style>
+.authors-line {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+}
 </style>
 
 ---
@@ -94,8 +107,8 @@ Before this slide, need a slide defining these tools and their components
 
 <div class="w-full flex justify-center">
 
-```mermaid {scale: 0.9}
-%%{init: {"flowchart": {"wrappingWidth": 640, "minNodeWidth": 640, "rankSpacing": 32, "padding": 14, "useMaxWidth": false, "htmlLabels": true}}}%%
+```mermaid {scale: 0.72}
+%%{init: {"flowchart": {"wrappingWidth": 640, "minNodeWidth": 640, "rankSpacing": 24, "padding": 10, "useMaxWidth": false, "htmlLabels": true}}}%%
 flowchart TD
     A[Create Inclusion/Exclusion Criteria based on seed papers] --> B["Search ACM DL, IEEE Xplore, Springer Link, and Scopus (n=1,834)"]
     B --> C["Apply IC/EC to titles/abstracts, remove duplicates (n=117)"]
@@ -107,6 +120,7 @@ flowchart TD
 
 <!--
 Less time on this slide: "we started with x papers, ended with y papers, details are in our SLR"
+TODO this slide is kinda ugly, maybe replace with a "sketched" version using the theme from the Bronto pres
 -->
 
 ---
@@ -153,7 +167,7 @@ Less time on this slide: "we started with x papers, ended with y papers, details
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  height: 390px;
+  height: 290px;
   margin-top: 16px;
 }
 
@@ -335,7 +349,7 @@ TODO make this a backup slide
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  height: 320px;
+  height: 255px;
   margin-top: 16px;
 }
 .info-card {

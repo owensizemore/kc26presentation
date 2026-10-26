@@ -6,6 +6,10 @@
   --slidev-theme-fontFamily: 'Lexend', ui-sans-serif, system-ui, sans-serif;
   /* Single knob for the accent color used by callout boxes below. */
   --callout-color: #0d9488;
+  /* Venue keeps the bottom 25% of the screen clear. Set --show-cutoff
+     to 1 to draw the red cutoff box, 0 to hide it. */
+  --venue-blank: 0.25;
+  --show-cutoff: 1;
 }
 
 /* Fira Code (the theme's mono font) ligates sequences like ->, ==, >= into
@@ -17,10 +21,14 @@
 }
 
 .slidev-layout {
+  box-sizing: border-box;
   font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
   /* PowerPoint-ish body size; the default theme runs closer to 1rem. */
   font-size: 1.25rem;
   line-height: 1.6;
+  /* % padding is relative to width; convert venue-blank (a fraction of
+     slide height) into width-% for a 16:9 canvas. */
+  padding-bottom: calc(100% * var(--venue-blank) * 9 / 16);
 }
 
 /* Slide titles are h1/h2 and centre by default; body copy stays flush left. */
