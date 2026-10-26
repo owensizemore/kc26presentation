@@ -84,7 +84,10 @@ autoClicks: false
 2. **RQ2**: What educational theories and framings inform the development of GenAI-powered postsecondary CSEd tools?
 3. **RQ3**: What methods are used to empirically evaluate the effects of GenAI-powered postsecondary CSEd tools?
 
-<!--Bold these-->
+<!--
+Before this slide, need a slide defining these tools and their components
+-->
+
 ---
 
 ## Literature Review Methodology (PRISMA)
@@ -101,6 +104,10 @@ flowchart TD
 ```
 
 </div>
+
+<!--
+Less time on this slide: "we started with x papers, ended with y papers, details are in our SLR"
+-->
 
 ---
 
@@ -185,6 +192,13 @@ flowchart TD
 .card-teal   { background: #ddf5f2; }
 </style>
 
+<!--
+Fix typo
+High-level overview of the reasoning behind the codes
+3 colors
+Codes within categories were not mutually exclusive
+-->
+
 ---
 autoClicks: false
 ---
@@ -217,7 +231,9 @@ autoClicks: false
 <!--
 Some of these bullets need qualifying examples
 Is there a way to make the (RQ1) text smaller?
+Consider removing percentages and putting them in presenter notes rather than directly on the slide
 -->
+
 ---
 autoClicks: false
 ---
@@ -234,7 +250,10 @@ autoClicks: false
 
 <!--
 Potentially split this into 2 slides
+Remove percentages here, but scaffolding still useful
+"Disproved" is technically not true, should remove this bullet
 -->
+
 ---
 autoClicks: false
 ---
@@ -251,7 +270,11 @@ autoClicks: false
 
 <!--
 Include references?
+
+Update phrasing bullet points
+bring back "measurements of students' affective state"
 -->
+
 ---
 autoClicks: false
 ---
@@ -274,6 +297,10 @@ autoClicks: false
   - Most used OpenAI models, but future tools will need to consider institutional compliance and data privacy
 - Tools predominantly targeted introductory CS students
 - Control groups were seldom used in evaluations
+
+<!--
+TODO make this a backup slide
+-->
 
 ---
 
@@ -341,6 +368,15 @@ autoClicks: false
 .card-yellow { background: #fff3cd; }
 .card-purple { background: #eee5ff; }
 </style>
+
+<!--
+investigate the gaps: magnifying glass
+build on what the field already knows: building blocks
+
+maybe the icons are a distraction?
+
+fade in each block, don't use other slides
+-->
 
 ---
 
@@ -445,4 +481,3 @@ autoClicks: false
   font-size: 1.05rem;
 }
 </style>
-
