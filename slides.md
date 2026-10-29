@@ -152,16 +152,14 @@ Before I get into the weeds of the scope of our paper, though, I want to context
 
 # How do we regulate GenAI use in postsecondary CSEd?
 
-- Ban it and AI-proof our classes
-- Open the floodgates, encourage GenAI use from the introductory sequence onward
-- <span v-mark.box.red="4">Guide students on how to use GenAI responsibly</span>
+<SpectrumArrow />
 
 <!--
-Consider replacing this with a spectrum, with option a on the left and option b on the right
-
 I don't need to remind you all of the challenges that have been presented by the proliferation of GenAI in postsecondary CS classrooms, which span concerns about overreliance, impacts on critical thinking and problem-solving skills, and ensuring that students are prepared for advanced work and careers in computer science.
 
-What I do want to discuss though is how we categorize strategies from instructors to address these challenges. I like to think of it as a spectrum
+What I do want to discuss though is how we categorize strategies from instructors to address these challenges. We can think of it as a spectrum where on one side we are encouraging less AI use and on the other more AI use. Some responses by instructors have been very heavy-handed, such as by attempting to ban the use of GenAI in classrooms entirely, or allowing unbridled use without any restrictions or guardrails. 
+
+Both of these approaches come with risks, so we want to consider a more nuanced set of strategies where we are guiding students toward responsible AI use, acknowledging that students have access to tools like ChatGPT and Claude but also encouraging them to use the tools in a way that supports their learning.
 -->
 ---
 
@@ -169,7 +167,51 @@ What I do want to discuss though is how we categorize strategies from instructor
 - Course interventions to learn new skills (prompting, evaluating GenAI output, etc.) 
 - Assignments demonstrating the strengths/weaknesses of GenAI
 - Student reflections to encourage thoughtful GenAI use
-- <span v-mark.underline.blue="5">Tools with guardrails that scaffold learning and mitigate irresponsible GenAI use</span>
+- <span v-mark.underline.green="5">Custom tools with guardrails to scaffold learning and mitigate irresponsible GenAI use</span>
+
+<!--
+So what are some examples of strategies to support responsible AI use? There are many approaches
+
+We wanted to explore one specific approach, which is the use of custom tools that offer an alternative to commercial tools like ChatGPT. I have a software engineering background, and I was particularly interested in what motivated educators to build custom tools and how they distinguished themselves from commercial tools.
+-->
+---
+
+```mermaid
+flowchart LR
+    SP["<img src='/public/icons/person.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' /> Student prompt"]
+    CTX["<img src='/public/icons/text.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Context"]
+
+    IC["<img src='/public/icons/filter.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Input checks and filtering"]
+    SYS["<img src='/public/icons/guide.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />System prompts"]
+    KB["<img src='/public/icons/database.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Knowledge base"]
+
+    LLM["<img src='/public/icons/chatgpt.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' /> LLM Endpoint"]
+    RC["<img src='/public/icons/checks.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Response checks"]
+    OUT["<img src='/public/icons/reply.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Output delivered to student"]
+
+    SP --> IC
+    CTX --> IC
+
+    IC --> LLM
+    SYS --> LLM
+    KB --> LLM
+
+    LLM --> RC
+    RC --> OUT
+
+    classDef node fill:#eee,stroke:#666,color:#000,stroke-width:1px
+    class SP,CTX,IC,SYS,KB,LLM,RC,OUT node
+```
+
+<style>
+.mermaid img {
+  width: 50px !important;
+  height: 50px !important;
+  max-width: 50px !important;
+  object-fit: contain !important;
+  aspect-ratio: 1 / 1;
+}
+</style>
 
 ---
 autoClicks: false
