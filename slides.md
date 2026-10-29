@@ -1,74 +1,153 @@
 ---
 theme: ./slidev-theme-cs390
 title: Presentation Title
+class: title-slide
 ---
 
 # GenAI-Powered Postsecondary Computer Science Education Tools
 ## A Systematic Literature Review
 
-<!--
 <div class="authors">
   <div class="author">
-    <div class="author-name">Owen Sizemore</div>
-    <img src="/logos/duke.png" alt="Duke" />
+    <div class="author-name"><strong>Owen Sizemore</strong></div>
+    <div class="author-photo-wrap">
+      <div class="author-photo wide-shot">
+        <img src="/authors/owen.jpg" alt="Owen Sizemore" />
+      </div>
+      <div class="author-badge">
+        <img src="/logos-square/duke.png" alt="Duke" />
+      </div>
+    </div>
   </div>
   <div class="author">
     <div class="author-name">Seth Bernstein</div>
-    <img src="/logos/michigan.png" alt="Michigan" />
+    <div class="author-photo-wrap">
+      <div class="author-photo">
+        <img src="/authors/seth.png" alt="Seth Bernstein" />
+      </div>
+      <div class="author-badge">
+        <img src="/logos-square/michigan.png" alt="Michigan" />
+      </div>
+    </div>
   </div>
   <div class="author">
     <div class="author-name">Audrey Ostrom</div>
-    <img src="/logos/santacruz.png" alt="Santa Cruz" />
+    <div class="author-photo-wrap">
+      <div class="author-photo">
+        <img src="/authors/audrey.png" alt="Audrey Ostrom" />
+      </div>
+      <div class="author-badge badge-ucsc">
+        <img src="/logos-square/santacruz.jpg" alt="UCSC" />
+      </div>
+    </div>
   </div>
   <div class="author">
     <div class="author-name">Thomas Rexin</div>
-    <img src="/logos/ncstate.png" alt="NC State" />
+    <div class="author-photo-wrap">
+      <div class="author-photo">
+        <img src="/authors/thomas.jpg" alt="Thomas Rexin" />
+      </div>
+      <div class="author-badge badge-ncstate">
+        <img src="/logos-square/ncstate.png" alt="NC State" />
+      </div>
+    </div>
   </div>
   <div class="author">
     <div class="author-name">Kristin Stephens-Martinez</div>
-    <img src="/logos/duke.png" alt="Duke" />
+    <div class="author-photo-wrap">
+      <div class="author-photo">
+        <img src="/authors/kristin.jpg" alt="Kristin Stephens-Martinez" />
+      </div>
+      <div class="author-badge">
+        <img src="/logos-square/duke.png" alt="Duke" />
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
 .authors {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  column-gap: 3.5rem;
+  margin-top: 1.5rem;
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+  align-items: start;
 }
 .author {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.45rem;
-  width: 18%;
+  gap: 0.55rem;
 }
 .author-name {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.2;
   text-align: center;
+  white-space: nowrap;
 }
-.author img {
-  width: 3.5rem;
-  height: 3.5rem;
+.author-photo-wrap {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  flex-shrink: 0;
+}
+.author-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+.author-photo.wide-shot img {
+  object-position: center 12%;
+  transform: scale(1.65);
+  transform-origin: center 18%;
+}
+.author-badge {
+  position: absolute;
+  right: -0.15rem;
+  bottom: -0.15rem;
+  width: 2.05rem;
+  height: 2.05rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid #fff;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+}
+.author-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.author-badge.badge-ucsc img {
+  transform: scale(1.22);
+}
+.author-badge.badge-ncstate {
+  background: #cc0000;
+}
+.author-badge.badge-ncstate img {
   object-fit: contain;
-}   
-</style>
--->
-
-<p class="authors-line"><strong>Owen Sizemore</strong>, Seth Bernstein, Audrey Ostrom, Thomas Rexin, Kristin Stephens-Martinez</p>
-
-<style>
-.authors-line {
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-left: -2.5rem;
-  margin-right: -2.5rem;
+  transform: scale(1.28);
 }
 </style>
 
+<!--
+Hello all! My name is Owen Sizemore, and I am a second-year Computer Science PhD student at Duke University. It is an immense privilege to be able to present our work here at Koli, and an even greater privilege to be the first presenter of the conference. 
+
+This work is a collaboration with other PhD students across the United States, and I'm very excited to share with you our findings on GenAI-powered Postsecondary Computer Science Education tools. 
+
+Before I get into the weeds of the scope of our paper, though, I want to contextualize why we felt this topic was important and our strategy for conducting our literature review. Our work is part of a larger question that many CS educators and researchers have been grappling with over the past couple of years, which is...
+-->
 ---
 
 # How do we regulate GenAI use in postsecondary CSEd?
@@ -79,6 +158,10 @@ title: Presentation Title
 
 <!--
 Consider replacing this with a spectrum, with option a on the left and option b on the right
+
+I don't need to remind you all of the challenges that have been presented by the proliferation of GenAI in postsecondary CS classrooms, which span concerns about overreliance, impacts on critical thinking and problem-solving skills, and ensuring that students are prepared for advanced work and careers in computer science.
+
+What I do want to discuss though is how we categorize strategies from instructors to address these challenges. I like to think of it as a spectrum
 -->
 ---
 
