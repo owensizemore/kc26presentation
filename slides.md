@@ -175,19 +175,36 @@ So what are some examples of strategies to support responsible AI use? There are
 We wanted to explore one specific approach, which is the use of custom tools that offer an alternative to commercial tools like ChatGPT. I have a software engineering background, and I was particularly interested in what motivated educators to build custom tools and how they distinguished themselves from commercial tools.
 -->
 ---
+class: tool-flow-slide
+---
+
+<h1 class="tool-flow-title">Tool Flow</h1>
+
+<div class="tool-flow">
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 10, "rankSpacing": 4, "padding": 8, "htmlLabels": true, "useMaxWidth": true}, "themeVariables": {"fontSize": "22px"}}}%%
 flowchart LR
-    SP["<img src='/public/icons/person.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' /> Student prompt"]
-    CTX["<img src='/public/icons/text.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Context"]
-
-    IC["<img src='/public/icons/filter.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Input checks and filtering"]
-    SYS["<img src='/public/icons/guide.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />System prompts"]
-    KB["<img src='/public/icons/database.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Knowledge base"]
-
-    LLM["<img src='/public/icons/chatgpt.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' /> LLM Endpoint"]
-    RC["<img src='/public/icons/checks.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Response checks"]
-    OUT["<img src='/public/icons/reply.png' width='50' height='50' style='width:50px;height:50px;object-fit:contain;aspect-ratio:1/1' />Output delivered to student"]
+    subgraph c1[" "]
+      direction TB
+      SP["<img src='/public/icons/person.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' /> <strong>Student prompt</strong>"]
+      CTX["<img src='/public/icons/text.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' />Context"]
+    end
+    subgraph c2[" "]
+      direction TB
+      IC["<img src='/public/icons/filter.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' />Input filtering"]
+      SYS["<img src='/public/icons/guide.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' /> <strong>System prompts</strong>"]
+      KB["<img src='/public/icons/database.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' />Knowledge base"]
+    end
+    subgraph c3[" "]
+      LLM["<img src='/public/icons/chatgpt.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' /> <strong>LLM Endpoint</strong>"]
+    end
+    subgraph c4[" "]
+      RC["<img src='/public/icons/checks.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' />Response checks"]
+    end
+    subgraph c5[" "]
+      OUT["<img src='/public/icons/reply.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' /> <strong>Response delivered to student</strong>"]
+    end
 
     SP --> IC
     CTX --> IC
@@ -199,20 +216,67 @@ flowchart LR
     LLM --> RC
     RC --> OUT
 
-    classDef node fill:#eee,stroke:#666,color:#000,stroke-width:1px
-    class SP,CTX,IC,SYS,KB,LLM,RC,OUT node
+    classDef col1 fill:#e3efff,stroke:#6ea8dc,color:#000,stroke-width:1px
+    classDef col1Bold fill:#e3efff,stroke:#3d7ab8,color:#000,stroke-width:12px,font-weight:bold
+    classDef col2 fill:#e2f4e8,stroke:#6bb57c,color:#000,stroke-width:1px
+    classDef col2Bold fill:#e2f4e8,stroke:#2e7d3a,color:#000,stroke-width:12px,font-weight:bold
+    classDef col3 fill:#fff3cd,stroke:#d4b44a,color:#000,stroke-width:1px
+    classDef col3Bold fill:#fff3cd,stroke:#b89620,color:#000,stroke-width:12px,font-weight:bold
+    classDef col4 fill:#eee5ff,stroke:#a78bdb,color:#000,stroke-width:1px
+    classDef col5 fill:#ddf5f2,stroke:#5aaaa0,color:#000,stroke-width:1px
+    classDef col5Bold fill:#ddf5f2,stroke:#2d8a80,color:#000,stroke-width:12px,font-weight:bold
+    class SP col1Bold
+    class CTX col1
+    class IC,KB col2
+    class SYS col2Bold
+    class LLM col3Bold
+    class RC col4
+    class OUT col5Bold
+    style c1 fill:none,stroke:none,color:transparent
+    style c2 fill:none,stroke:none,color:transparent
+    style c3 fill:none,stroke:none,color:transparent
+    style c4 fill:none,stroke:none,color:transparent
+    style c5 fill:none,stroke:none,color:transparent
 ```
 
+</div>
+
 <style>
+.tool-flow-title {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  margin: 0;
+  text-align: right;
+  z-index: 5;
+  pointer-events: none;
+}
+.tool-flow {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.tool-flow :deep(.mermaid) {
+  display: block;
+  width: 100%;
+}
 .mermaid img {
-  width: 50px !important;
-  height: 50px !important;
-  max-width: 50px !important;
+  width: 72px !important;
+  height: 72px !important;
+  max-width: 72px !important;
   object-fit: contain !important;
   aspect-ratio: 1 / 1;
 }
 </style>
 
+<!--
+Within our literature review we observed a wide range of tool designs and architectures, but the most common was a text-based interface similar to ChatGPT or Claude, but with some additional components and guardrails added on the back end.
+
+The blocks with bold text and a thicker outline are core components that were found in most tools, while the other blocks were components that were sometimes added for additional functionality.
+
+Begins with student prompt, might be additional context as well. Inputs could be filtered to avoid off-topic responses, and the sanitized input is combined with system prompts and a knowledge base and fed to the LLM endpoint, such as the OpenAI API. From there, a response was returned from the endpoint, which could be checked to ensure it addresses the students' query, and then delivered back to the student on the frontend.
+-->
 ---
 autoClicks: false
 ---
@@ -223,12 +287,12 @@ autoClicks: false
 3. **RQ3**: What methods are used to empirically evaluate the effects of GenAI-powered postsecondary CSEd tools?
 
 <!--
-Before this slide, need a slide defining these tools and their components
+To better understand GenAI-powered postsecondary CSEd tools, we asked the following research questions:
 -->
-
 ---
 
-## Literature Review Methodology (PRISMA)
+## Literature Review Methodology 
+<p class="text-center">(Kitchenham & Charters, PRISMA)</p>
 
 <div class="w-full flex justify-center">
 
@@ -244,10 +308,10 @@ flowchart TD
 </div>
 
 <!--
-Less time on this slide: "we started with x papers, ended with y papers, details are in our SLR"
-TODO this slide is kinda ugly, maybe replace with a "sketched" version using the theme from the Bronto pres
--->
+To structure our literature review, we followed the practices outlined by Kitchenham and Charters as well as the PRISMA 2020 guidelines.
 
+The full details can be found in the paper itself, but I'll summarize with two key points. The first was that we started with just over 1,800 search results from various digital libraries, and finished with 72 papers that we fully analyzed. The second is that we scoped our literature review to focus specifically on postsecondary CSEd (no K-12), tools that used modern LLMs (not older ITSes and things like that), and the tools had to be student-facing, so no autograders or instructor tools
+-->
 ---
 
 ## Codebook Categories
@@ -255,31 +319,37 @@ TODO this slide is kinda ugly, maybe replace with a "sketched" version using the
 <div class="card-grid">
 
   <div class="info-card card-blue">
+    <span class="rq-label">RQ1</span>
     <h3>Problem Space</h3>
     <p>Why is the tool being built?</p>
   </div>
 
-  <div class="info-card card-green">
-    <h3>Educational Framings</h3>
-    <p>How does the tool support learning?</p>
-  </div>
-
-  <div class="info-card card-yellow">
+  <div class="info-card card-blue">
+    <span class="rq-label">RQ1</span>
     <h3>Pedagogical Features</h3>
     <p>How does the tool support learning?</p>
   </div>
 
-  <div class="info-card card-purple">
+  <div class="info-card card-blue">
+    <span class="rq-label">RQ1</span>
     <h3>Delivery Method</h3>
     <p>How do students access the tool?</p>
   </div>
 
   <div class="info-card card-pink">
+    <span class="rq-label">RQ2</span>
+    <h3>Educational Framings</h3>
+    <p>What research is the tool based on?</p>
+  </div>
+
+  <div class="info-card card-green">
+    <span class="rq-label">RQ3</span>
     <h3>Evaluation Goals</h3>
     <p>What do the authors want to understand about the tool?</p>
   </div>
 
-  <div class="info-card card-teal">
+  <div class="info-card card-green">
+    <span class="rq-label">RQ3</span>
     <h3>Evaluation Methods</h3>
     <p>How are the tools empirically evaluated?</p>
   </div>
@@ -297,6 +367,7 @@ TODO this slide is kinda ugly, maybe replace with a "sketched" version using the
 }
 
 .info-card {
+  position: relative;
   box-sizing: border-box;
   min-height: 0;
   padding: 16px;
@@ -307,6 +378,16 @@ TODO this slide is kinda ugly, maybe replace with a "sketched" version using the
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.rq-label {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  opacity: 0.7;
 }
 
 .info-card h3 {
@@ -332,10 +413,9 @@ TODO this slide is kinda ugly, maybe replace with a "sketched" version using the
 </style>
 
 <!--
-Fix typo
-High-level overview of the reasoning behind the codes
-3 colors
-Codes within categories were not mutually exclusive
+We divided our codebook into 6 categories. Codes within categories were not mutually exclusive; for example, we coded for 8 different pedagogical features, and a tool could theoretically have all 8 or none of them
+
+The top 3 addressed RQ1, educational framings addresses RQ2, and the last two address RQ3
 -->
 
 ---
@@ -344,10 +424,17 @@ autoClicks: false
 
 # Motivations for building tools (RQ1)
 
-- 60%: Desire to provide personalized, context-aware support to students
-- 57%: Concern that unrestricted GenAI use can lead to overreliance
-- 38%: Lack of scalable help-seeking in CS classrooms
+- Desire to provide personalized, context-aware support to students
+- Concern that unrestricted GenAI use can lead to overreliance
+- Lack of scalable help-seeking in CS classrooms
 
+<!--
+Two most commonly identified motivations were desire to provide personalized support and concern that LLMs lead to overreliance
+
+These two themes overlap with each other, as ChatGPT and other tools can offer that personalized support, but doesn't always do so in a way that supports learning. Further, we observed instructors desiring a tool whose responses are tailored to their specific course context, based on concerns that commercial tools don't know what prior knowledge a student has and what they're learning in class
+
+We also observed some instructors responding to high enrollment intro-sequence CS courses. There was an acknowledgement that the limited number of course staff can't provide 1 on 1 support to everyone, so providing that support in an automated way through a GenAI-powered tool was a promising alternative
+-->
 ---
 autoClicks: false
 ---
@@ -360,58 +447,77 @@ autoClicks: false
 
 </div>
 
-- 81%: Scaffolded feedback so the tool doesn’t give away answers
-- 57%: Adapt feedback to students’ prior interactions
-- 25%: Ground responses in curated learning material
+- Scaffold feedback so the tool doesn’t give away answers
+- Adapt feedback to students’ prior interactions
+- Ground responses in curated learning material
 
 **Delivery method**
-- 63% of tools delivered via a standalone web app, others embedded in course platforms or packaged as IDE extensions
+- Majority of tools delivered via a standalone web app, others embedded in course platforms or packaged as IDE extensions
 
 <!--
-Some of these bullets need qualifying examples
-Is there a way to make the (RQ1) text smaller?
-Consider removing percentages and putting them in presenter notes rather than directly on the slide
--->
+You're going to be hearing the term scaffolding a lot here, but this concept is very much present in how the tools function. 
+Scaffolding presents itself in different ways: system prompts telling the LLM to structure its response to not give answers, post-response checks to make sure the output doesn't include lines of code, etc.
 
+Adaptive feedback relates to this idea and is similar to how students interact with commercial tools: sometimes explicit (student makes specific request and LLM adjusts to it), other times implicit (tool holds on to conversation history and that informs future interactions)
+
+Third bullet refers to the use of RAG or databases to provide richer context to the tool. One example: text transcriptions of lectures given to LLM along with instructions to reference the lectures when delivering responses. Helps the tool's responses stay relevant to the student and the course
+
+With delivery method, most often saw tools being accessed from standalone websites just like ChatGPT or Claude, but a few of them embedded int a course forum or LMS and fewer still were integrated closely into a coding environment through IDE extension or command-line tool
+
+81% scaff
+57% adapt
+25% RAG-data
+63% standalone web app
+-->
 ---
 autoClicks: false
 ---
 
 # Educational Framings (RQ2)
 
-- Most frequent mentions: Scaffolding (63%), Cognitive Load Theory (36%), metacognition (36%), Self-regulated learning (23%)
+- Most frequent mentions: Scaffolding, Cognitive Load Theory, metacognition, Self-regulated learning
   - High co-occurrence between all these
 - No clear trend for when or how framings were used
   - Median of 3 framings mentioned
-  - 13% of papers did not include any coded framings, but still built on prior work
-  - Disproved our assumption that tools would be built without considering existing research
+  - Some papers did not include any coded framings, but still built on prior work
 - Still need to understand connections between cited research and tool features
 
 <!--
 Potentially split this into 2 slides
 Remove percentages here, but scaffolding still useful
 "Disproved" is technically not true, should remove this bullet
--->
 
+We looked for mentions of 13 different terms pertaining to the literature in CSEd - scaffolding, self-efficacy, self-regulated learning, etc.
+
+Four framings we observed most often, and I'm using the term "framing" because these terms weren't always qualified with citations - hard to pin down something like "scaffolding", which is very broad
+
+We didn't identify any overarching trends about when or how these framings were used, but generally the use of them was quite diverse. We came in with a slightly cynical assumption that papers wouldn't have thorough framings
+
+Papers with lots of buzzwords and references are more likely to be published
+
+scaff 63%
+clt 36%
+meta 36%
+SRL 23%
+-->
 ---
 autoClicks: false
 ---
 
 # Evaluation Goals (RQ3)
 
-- 79%: Understand student perceptions
-- 61%: Understand student usage patterns
-- 33%: Measure impact on learning outcomes
+- Understand student perceptions
+- Understand student usage patterns
+- Measure impact on learning outcomes
   - Many examples: 
     - Post-intervention test performance
     - Changes between pre- and post-test scores
-    - Measurements of impact on students (self-efficacy, nervousness, etc.)
+    - Measurements of students' affective state (self-efficacy, nervousness, etc.)
 
 <!--
-Include references?
+Good number of papers had more than one goal
 
-Update phrasing bullet points
-bring back "measurements of students' affective state"
+Sometimes depended on maturity of the tool: pilot stage (understand what students think) vs. longer-term analysis (will this help students learn CS)
 -->
 
 ---
@@ -425,44 +531,33 @@ autoClicks: false
   - Less emphasis on measuring changes, just want to understand how students felt about the tool
 - Multiple evaluation methods were common
   - 69% of papers used between 2 and 4 methods
-  - 42 distinct combinations of evaluation methods
   - Just 2 papers had no evaluations at all
 
----
-
-# Other Trends
-
-- Model choice reasoning remains unclear
-  - Most used OpenAI models, but future tools will need to consider institutional compliance and data privacy
-- Tools predominantly targeted introductory CS students
-- Control groups were seldom used in evaluations
-
 <!--
-TODO make this a backup slide
+Interesting to consider low-hanging fruit on part of researchers
 -->
-
 ---
 
 # Recommendations
 
 <div class="rec-grid">
 
-  <div class="info-card card-blue">
+  <div class="info-card card-blue" v-click.fade-in>
     <ph-question class="rec-icon" />
     <h3>Start with the problem, not the tool</h3>
   </div>
 
-  <div class="info-card card-green">
-    <ph-books class="rec-icon" />
+  <div class="info-card card-green" v-click.fade-in>
+    <ph-lego class="rec-icon" />
     <h3>Build on what the field already knows</h3>
   </div>
 
-  <div class="info-card card-yellow">
-    <ph-binoculars class="rec-icon" />
+  <div class="info-card card-yellow" v-click.fade-in>
+    <ph-magnifying-glass class="rec-icon" />
     <h3>Investigate the gaps</h3>
   </div>
 
-  <div class="info-card card-purple">
+  <div class="info-card card-purple" v-click.fade-in>
     <ph-arrows-split class="rec-icon" />
     <h3>Consider that students have alternatives</h3>
   </div>
@@ -506,52 +601,35 @@ TODO make this a backup slide
 .card-green  { background: #e2f4e8; }
 .card-yellow { background: #fff3cd; }
 .card-purple { background: #eee5ff; }
+.rec-grid :deep(.slidev-vclick-target) {
+  transition: opacity 0.45s ease !important;
+}
 </style>
 
 <!--
-investigate the gaps: magnifying glass
-build on what the field already knows: building blocks
-
-maybe the icons are a distraction?
-
-fade in each block, don't use other slides
--->
-
----
-
-# Start with the problem, not the tool
-
+Start with the problem, not the tool
 - Resist the urge to build a solution that doesn’t address a specific problem 
 - Don't integrate GenAI tools into your course without a meaningful justification 
 - Apply principles from learner-centered design, HCI, & needsfinding
 
----
-
-# Build on what the field already knows
-
+Build on what the field already knows
 - Understand what other tools have gotten right and wrong already
 - Meet the minimum standards for a quality custom tool (prompt engineering, filtering out bad responses, minimizing hallucinations, etc.)
 - Make meaningful connections to prior research in CSEd, learning science, cognitive science, and other fields
 
----
-
-# Investigate the gaps
-
+Investigate the gaps
 - This SLR suggests a skew toward introductory programming
 - Tools with lots of scaffolding might be great for a CS1/CS2 environment, but unclear how this would fare with other students
 - Expand the scope of tools to include more students and more competencies (software engineering, system design, AI-assisted programming, etc.)
 
----
-
-# Consider that students have alternatives
-
+Consider that students have alternatives
 - "If you build it, they will come" doesn’t apply to a student with plenty of GenAI tools to choose from
 - Students will always have access to commercial tools in unsupervised settings
 - Make thoughtful design decisions to give students a good reason to use your tool
   - Use RAG/databases to leverage course content
   - Embed tools in existing course platforms
   - Make regular improvements in response to feedback
-
+-->
 ---
 layout: two-cols-header
 autoClicks: false
@@ -575,7 +653,7 @@ autoClicks: false
 <div class="qr-panel">
   <p class="qr-caption">GenAI-Powered Postsecondary Computer Science Education Tools: A Systematic Literature Review</p>
   <div class="qr-placeholder">QR code</div>
-  <p class="qr-email">owen.sizemore@duke.edu</p>
+  <p class="qr-email"><a href="mailto:owen.sizemore@duke.edu">owen.sizemore@duke.edu</a></p>
 </div>
 
 <style>
@@ -619,4 +697,57 @@ autoClicks: false
   text-align: center;
   font-size: 1.05rem;
 }
+.qr-email a {
+  color: inherit;
+  text-decoration: underline;
+}
 </style>
+
+---
+
+# Start with the problem, not the tool
+
+- Resist the urge to build a solution that doesn’t address a specific problem
+- Don't integrate GenAI tools into your course without a meaningful justification
+- Apply principles from learner-centered design, HCI, & needsfinding
+
+---
+
+# Build on what the field already knows
+
+- Understand what other tools have gotten right and wrong already
+- Meet the minimum standards for a quality custom tool (prompt engineering, filtering out bad responses, minimizing hallucinations, etc.)
+- Make meaningful connections to prior research in CSEd, learning science, cognitive science, and other fields
+
+---
+
+# Investigate the gaps
+
+- This SLR suggests a skew toward introductory programming
+- Tools with lots of scaffolding might be great for a CS1/CS2 environment, but unclear how this would fare with other students
+- Expand the scope of tools to include more students and more competencies (software engineering, system design, AI-assisted programming, etc.)
+
+---
+
+# Consider that students have alternatives
+
+- "If you build it, they will come" doesn’t apply to a student with plenty of GenAI tools to choose from
+- Students will always have access to commercial tools in unsupervised settings
+- Make thoughtful design decisions to give students a good reason to use your tool
+    - Use RAG/databases to leverage course content
+    - Embed tools in existing course platforms
+    - Make regular improvements in response to feedback
+
+---
+
+# Other Trends
+
+- Model choice reasoning remains unclear
+    - Most used OpenAI models, but future tools will need to consider institutional compliance and data privacy
+- Tools predominantly targeted introductory CS students
+- Control groups were seldom used in evaluations
+
+<!--
+Backup slide
+-->
+---

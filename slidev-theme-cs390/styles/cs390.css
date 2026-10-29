@@ -9,7 +9,7 @@
   /* Venue keeps the bottom 25% of the screen clear. Set --show-cutoff
      to 1 to draw the red cutoff box, 0 to hide it. */
   --venue-blank: 0.25;
-  --show-cutoff: 1;
+  --show-cutoff: 0;
 }
 
 /* Fira Code (the theme's mono font) ligates sequences like ->, ==, >= into
