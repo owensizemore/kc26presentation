@@ -155,12 +155,17 @@ Before I get into the weeds of the scope of our paper, though, I want to context
 <SpectrumArrow />
 
 <!--
+TODO: no AI and lots of AI
+TODO: lower spectrum, increase horizontal padding
+TODO: shorten script if needed, could make my point in 30 seconds
+
 I don't need to remind you all of the challenges that have been presented by the proliferation of GenAI in postsecondary CS classrooms, which span concerns about overreliance, impacts on critical thinking and problem-solving skills, and ensuring that students are prepared for advanced work and careers in computer science.
 
 What I do want to discuss though is how we categorize strategies from instructors to address these challenges. We can think of it as a spectrum where on one side we are encouraging less AI use and on the other more AI use. Some responses by instructors have been very heavy-handed, such as by attempting to ban the use of GenAI in classrooms entirely, or allowing unbridled use without any restrictions or guardrails. 
 
 Both of these approaches come with risks, so we want to consider a more nuanced set of strategies where we are guiding students toward responsible AI use, acknowledging that students have access to tools like ChatGPT and Claude but also encouraging them to use the tools in a way that supports their learning.
 -->
+
 ---
 
 # What does this look like?
@@ -170,15 +175,18 @@ Both of these approaches come with risks, so we want to consider a more nuanced 
 - <span v-mark.underline.green="5">Custom tools with guardrails to scaffold learning and mitigate irresponsible GenAI use</span>
 
 <!--
+TODO shorten this slide if needed. Turn bullets into script and make shorter bullets for the slide itself
+
 So what are some examples of strategies to support responsible AI use? There are many approaches
 
 We wanted to explore one specific approach, which is the use of custom tools that offer an alternative to commercial tools like ChatGPT. I have a software engineering background, and I was particularly interested in what motivated educators to build custom tools and how they distinguished themselves from commercial tools.
 -->
+
 ---
 class: tool-flow-slide
 ---
 
-<h1 class="tool-flow-title">Tool Flow</h1>
+<h1 class="tool-flow-title">Tool Paradigms</h1>
 
 <div class="tool-flow">
 
@@ -271,12 +279,19 @@ flowchart LR
 </style>
 
 <!--
+TODO shorten script
+TODO don't read out block names. Could pause for audience to consume slide
+TODO: shorten "response delivered to student" to "response to student"
+
+So what do these tools look like?
+
 Within our literature review we observed a wide range of tool designs and architectures, but the most common was a text-based interface similar to ChatGPT or Claude, but with some additional components and guardrails added on the back end.
 
 The blocks with bold text and a thicker outline are core components that were found in most tools, while the other blocks were components that were sometimes added for additional functionality.
 
 Begins with student prompt, might be additional context as well. Inputs could be filtered to avoid off-topic responses, and the sanitized input is combined with system prompts and a knowledge base and fed to the LLM endpoint, such as the OpenAI API. From there, a response was returned from the endpoint, which could be checked to ensure it addresses the students' query, and then delivered back to the student on the frontend.
 -->
+
 ---
 autoClicks: false
 ---
@@ -308,10 +323,15 @@ flowchart TD
 </div>
 
 <!--
+TODO: potentially shorten flowchart text, make font size bigger to be more easily seen
+TODO: add backup slide with full IC/EC
+TODO: Don't discuss IC/EC here
+
 To structure our literature review, we followed the practices outlined by Kitchenham and Charters as well as the PRISMA 2020 guidelines.
 
 The full details can be found in the paper itself, but I'll summarize with two key points. The first was that we started with just over 1,800 search results from various digital libraries, and finished with 72 papers that we fully analyzed. The second is that we scoped our literature review to focus specifically on postsecondary CSEd (no K-12), tools that used modern LLMs (not older ITSes and things like that), and the tools had to be student-facing, so no autograders or instructor tools
 -->
+
 ---
 
 ## Codebook Categories
@@ -413,6 +433,8 @@ The full details can be found in the paper itself, but I'll summarize with two k
 </style>
 
 <!--
+TODO maybe make colors slightly darker
+
 We divided our codebook into 6 categories. Codes within categories were not mutually exclusive; for example, we coded for 8 different pedagogical features, and a tool could theoretically have all 8 or none of them
 
 The top 3 addressed RQ1, educational framings addresses RQ2, and the last two address RQ3
@@ -429,12 +451,15 @@ autoClicks: false
 - Lack of scalable help-seeking in CS classrooms
 
 <!--
+TODO consider using bullet points as script and shorten actual bullets
+
 Two most commonly identified motivations were desire to provide personalized support and concern that LLMs lead to overreliance
 
 These two themes overlap with each other, as ChatGPT and other tools can offer that personalized support, but doesn't always do so in a way that supports learning. Further, we observed instructors desiring a tool whose responses are tailored to their specific course context, based on concerns that commercial tools don't know what prior knowledge a student has and what they're learning in class
 
 We also observed some instructors responding to high enrollment intro-sequence CS courses. There was an acknowledgement that the limited number of course staff can't provide 1 on 1 support to everyone, so providing that support in an automated way through a GenAI-powered tool was a promising alternative
 -->
+
 ---
 autoClicks: false
 ---
@@ -455,6 +480,8 @@ autoClicks: false
 - Majority of tools delivered via a standalone web app, others embedded in course platforms or packaged as IDE extensions
 
 <!--
+TODO shorten delivery method bullet point
+
 You're going to be hearing the term scaffolding a lot here, but this concept is very much present in how the tools function. 
 Scaffolding presents itself in different ways: system prompts telling the LLM to structure its response to not give answers, post-response checks to make sure the output doesn't include lines of code, etc.
 
@@ -469,6 +496,7 @@ With delivery method, most often saw tools being accessed from standalone websit
 25% RAG-data
 63% standalone web app
 -->
+
 ---
 autoClicks: false
 ---
@@ -483,6 +511,12 @@ autoClicks: false
 - Still need to understand connections between cited research and tool features
 
 <!--
+TODO: Avoid criticism of tools on this slide
+TODO: Simplify bullets. If it's the weakest slide, don't talk much about it
+TODO: Capitalize metacognition
+
+last bullet: we answered the "what", not the "how"
+
 Potentially split this into 2 slides
 Remove percentages here, but scaffolding still useful
 "Disproved" is technically not true, should remove this bullet
@@ -500,6 +534,7 @@ clt 36%
 meta 36%
 SRL 23%
 -->
+
 ---
 autoClicks: false
 ---
@@ -515,11 +550,14 @@ autoClicks: false
     - Measurements of students' affective state (self-efficacy, nervousness, etc.)
 
 <!--
+TODO: Last bullet: "Measure impact on students"
+TODO: Get rid of nested bullet "many examples"
+TODO: "Measurements of students..." change to "Students' affective state" 
+
 Good number of papers had more than one goal
 
 Sometimes depended on maturity of the tool: pilot stage (understand what students think) vs. longer-term analysis (will this help students learn CS)
 -->
-
 ---
 autoClicks: false
 ---
@@ -534,8 +572,11 @@ autoClicks: false
   - Just 2 papers had no evaluations at all
 
 <!--
+TODO: Bullets are script, shorten them
+
 Interesting to consider low-hanging fruit on part of researchers
 -->
+
 ---
 
 # Recommendations
@@ -607,6 +648,8 @@ Interesting to consider low-hanging fruit on part of researchers
 </style>
 
 <!--
+TODO: vertical align icons
+
 Start with the problem, not the tool
 - Resist the urge to build a solution that doesn’t address a specific problem 
 - Don't integrate GenAI tools into your course without a meaningful justification 
@@ -630,6 +673,7 @@ Consider that students have alternatives
   - Embed tools in existing course platforms
   - Make regular improvements in response to feedback
 -->
+
 ---
 layout: two-cols-header
 autoClicks: false
@@ -702,6 +746,15 @@ autoClicks: false
   text-decoration: underline;
 }
 </style>
+
+<!--
+TODO: shorten bullets
+TODO: Add short link to paper in addition to QR code
+-->
+
+---
+
+# Backup
 
 ---
 
