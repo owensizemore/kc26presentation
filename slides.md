@@ -1,6 +1,6 @@
 ---
 theme: ./slidev-theme-cs390
-title: Presentation Title
+title: GenAI-Powered Postsecondary Computer Science Education Tools A Systematic Literature Review
 class: title-slide
 ---
 
@@ -142,6 +142,8 @@ class: title-slide
 </style>
 
 <!--
+TODO: Get rid of slide numbers because they include backup slides
+
 Hello all! My name is Owen Sizemore, and I am a second-year Computer Science PhD student at Duke University. It is an immense privilege to be able to present our work here at Koli, and an even greater privilege to be the first presenter of the conference. 
 
 This work is a collaboration with other PhD students across the United States, and I'm very excited to share with you our findings on GenAI-powered Postsecondary Computer Science Education tools. 
