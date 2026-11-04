@@ -1,6 +1,7 @@
 ---
 theme: ./slidev-theme-cs390
-title: GenAI-Powered Postsecondary Computer Science Education Tools A Systematic Literature Review
+title: GenAI-Powered Postsecondary Computer Science Education Tools A Systematic
+  Literature Review
 class: title-slide
 ---
 
@@ -142,14 +143,19 @@ class: title-slide
 </style>
 
 <!--
-TODO: Get rid of slide numbers because they include backup slides
+(30 seconds)
 
-Hello all! My name is Owen Sizemore, and I am a second-year Computer Science PhD student at Duke University. It is an immense privilege to be able to present our work here at Koli, and an even greater privilege to be the first presenter of the conference. 
+Alright, let's get started
 
-This work is a collaboration with other PhD students across the United States, and I'm very excited to share with you our findings on GenAI-powered Postsecondary Computer Science Education tools. 
+Such a privilege to present for the first time at Koli, and be the first presenter
 
-Before I get into the weeds of the scope of our paper, though, I want to contextualize why we felt this topic was important and our strategy for conducting our literature review. Our work is part of a larger question that many CS educators and researchers have been grappling with over the past couple of years, which is...
+Owen Sizemore, CS PhD student at Duke
+
+A little nice to go first because I get to talk about AI and GenAI before people get sick of hearing about it
+
+Before we started working on this lit review, we were curious about the question
 -->
+
 ---
 
 # How do we regulate GenAI use in postsecondary CSEd?
@@ -157,9 +163,7 @@ Before I get into the weeds of the scope of our paper, though, I want to context
 <SpectrumArrow />
 
 <!--
-TODO: no AI and lots of AI
-TODO: lower spectrum, increase horizontal padding
-TODO: shorten script if needed, could make my point in 30 seconds
+SCRIPT: shorten script if needed, could make my point in 30 seconds
 
 I don't need to remind you all of the challenges that have been presented by the proliferation of GenAI in postsecondary CS classrooms, which span concerns about overreliance, impacts on critical thinking and problem-solving skills, and ensuring that students are prepared for advanced work and careers in computer science.
 
@@ -171,18 +175,28 @@ Both of these approaches come with risks, so we want to consider a more nuanced 
 ---
 
 # What does this look like?
-- Course interventions to learn new skills (prompting, evaluating GenAI output, etc.) 
-- Assignments demonstrating the strengths/weaknesses of GenAI
+- Course interventions to learn how to use GenAI
 - Student reflections to encourage thoughtful GenAI use
-- <span v-mark.underline.green="5">Custom tools with guardrails to scaffold learning and mitigate irresponsible GenAI use</span>
+- <span v-mark.underline.green="5">Custom tools with guardrails to mitigate irresponsible GenAI use</span>
 
 <!--
-TODO shorten this slide if needed. Turn bullets into script and make shorter bullets for the slide itself
+SCRIPT shorten this slide if needed. Turn bullets into script and make shorter bullets for the slide itself
 
 So what are some examples of strategies to support responsible AI use? There are many approaches
 
 We wanted to explore one specific approach, which is the use of custom tools that offer an alternative to commercial tools like ChatGPT. I have a software engineering background, and I was particularly interested in what motivated educators to build custom tools and how they distinguished themselves from commercial tools.
+
+- Course interventions to learn new skills (prompting, evaluating GenAI output, etc.) 
+- Assignments demonstrating the strengths/weaknesses of GenAI
+- Student reflections to encourage thoughtful GenAI use
+- Custom tools with guardrails to scaffold learning and mitigate irresponsible GenAI use
 -->
+
+---
+layout: center
+---
+
+<img src="/misc/umbrella2.png" alt="GenAI-Powered Postsecondary CSEd Tools umbrella term" style="max-height: 85vh; width: auto; padding: 7rem 7rem;" />
 
 ---
 class: tool-flow-slide
@@ -213,7 +227,7 @@ flowchart LR
       RC["<img src='/public/icons/checks.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' />Response checks"]
     end
     subgraph c5[" "]
-      OUT["<img src='/public/icons/reply.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' /> <strong>Response delivered to student</strong>"]
+      OUT["<img src='/public/icons/reply.png' width='72' height='72' style='width:72px;height:72px;object-fit:contain;aspect-ratio:1/1' /> <strong>Response to student</strong>"]
     end
 
     SP --> IC
@@ -281,9 +295,8 @@ flowchart LR
 </style>
 
 <!--
-TODO shorten script
-TODO don't read out block names. Could pause for audience to consume slide
-TODO: shorten "response delivered to student" to "response to student"
+SCRIPT shorten script
+SCRIPT don't read out block names. Could pause for audience to consume slide
 
 So what do these tools look like?
 
@@ -299,9 +312,15 @@ autoClicks: false
 ---
 
 # Research Questions
-1. **RQ1**: What approaches are currently used to build GenAI-powered postsecondary CSEd tools, and how are they motivated?
-2. **RQ2**: What educational theories and framings inform the development of GenAI-powered postsecondary CSEd tools?
-3. **RQ3**: What methods are used to empirically evaluate the effects of GenAI-powered postsecondary CSEd tools?
+1. <span class="hl-blue"><strong>RQ1 (Approaches & motivations)</strong></span>: What approaches are currently used to build GenAI-powered postsecondary CSEd tools, and how are they motivated?
+2. <span class="hl-pink"><strong>RQ2 (Educational framings)</strong></span>: What educational theories and framings inform the development of GenAI-powered postsecondary CSEd tools?
+3. <span class="hl-green"><strong>RQ3 (Evaluations)</strong></span>: What methods are used to empirically evaluate the effects of GenAI-powered postsecondary CSEd tools?
+
+<style>
+.slidev-layout > ol > li {
+  margin-bottom: 1rem;
+}
+</style>
 
 <!--
 To better understand GenAI-powered postsecondary CSEd tools, we asked the following research questions:
@@ -313,21 +332,19 @@ To better understand GenAI-powered postsecondary CSEd tools, we asked the follow
 
 <div class="w-full flex justify-center">
 
-```mermaid {scale: 0.72}
+```mermaid {scale: 0.85}
 %%{init: {"flowchart": {"wrappingWidth": 640, "minNodeWidth": 640, "rankSpacing": 24, "padding": 10, "useMaxWidth": false, "htmlLabels": true}}}%%
 flowchart TD
-    A[Create Inclusion/Exclusion Criteria based on seed papers] --> B["Search ACM DL, IEEE Xplore, Springer Link, and Scopus (n=1,834)"]
-    B --> C["Apply IC/EC to titles/abstracts, remove duplicates (n=117)"]
-    C --> D[Develop codebook with sample of papers, calculate IRR]
-    D --> E["Apply IC/EC to full papers (n=72)"]
+    A[Create IC/EC based on seed papers] --> B["Search digital libraries (<strong>n=1,834</strong>)"]
+    B --> C["Apply IC/EC to titles/abstracts (<strong>n=117</strong>)"]
+    C --> D[Develop codebook with paper sample, calculate IRR]
+    D --> E["Apply IC/EC to full papers (<strong>n=72</strong>)"]
 ```
 
 </div>
 
 <!--
-TODO: potentially shorten flowchart text, make font size bigger to be more easily seen
-TODO: add backup slide with full IC/EC
-TODO: Don't discuss IC/EC here
+SCRIPT: Don't discuss IC/EC here
 
 To structure our literature review, we followed the practices outlined by Kitchenham and Charters as well as the PRISMA 2020 guidelines.
 
@@ -435,8 +452,6 @@ The full details can be found in the paper itself, but I'll summarize with two k
 </style>
 
 <!--
-TODO maybe make colors slightly darker
-
 We divided our codebook into 6 categories. Codes within categories were not mutually exclusive; for example, we coded for 8 different pedagogical features, and a tool could theoretically have all 8 or none of them
 
 The top 3 addressed RQ1, educational framings addresses RQ2, and the last two address RQ3
@@ -446,14 +461,14 @@ The top 3 addressed RQ1, educational framings addresses RQ2, and the last two ad
 autoClicks: false
 ---
 
-# Motivations for building tools (RQ1)
+# Motivations for building tools <span class="rq-title rq1">(RQ1)</span>
 
-- Desire to provide personalized, context-aware support to students
-- Concern that unrestricted GenAI use can lead to overreliance
-- Lack of scalable help-seeking in CS classrooms
+- Provide personalized, context-aware support
+- Unrestricted GenAI use can lead to overreliance
+- Lack of scalable help-seeking in classrooms
 
 <!--
-TODO consider using bullet points as script and shorten actual bullets
+SCRIPT consider using bullet points as script and shorten actual bullets
 
 Two most commonly identified motivations were desire to provide personalized support and concern that LLMs lead to overreliance
 
@@ -466,7 +481,7 @@ We also observed some instructors responding to high enrollment intro-sequence C
 autoClicks: false
 ---
 
-# Tool features and approaches (RQ1)
+# Tool features and approaches <span class="rq-title rq1">(RQ1)</span>
 
 <div>
 
@@ -475,15 +490,13 @@ autoClicks: false
 </div>
 
 - Scaffold feedback so the tool doesn’t give away answers
-- Adapt feedback to students’ prior interactions
+- Curated practice/problem sets
 - Ground responses in curated learning material
 
 **Delivery method**
-- Majority of tools delivered via a standalone web app, others embedded in course platforms or packaged as IDE extensions
+- Mostly standalone web apps
 
 <!--
-TODO shorten delivery method bullet point
-
 You're going to be hearing the term scaffolding a lot here, but this concept is very much present in how the tools function. 
 Scaffolding presents itself in different ways: system prompts telling the LLM to structure its response to not give answers, post-response checks to make sure the output doesn't include lines of code, etc.
 
@@ -503,19 +516,19 @@ With delivery method, most often saw tools being accessed from standalone websit
 autoClicks: false
 ---
 
-# Educational Framings (RQ2)
+# Educational Framings <span class="rq-title rq2">(RQ2)</span>
 
-- Most frequent mentions: Scaffolding, Cognitive Load Theory, metacognition, Self-regulated learning
-  - High co-occurrence between all these
-- No clear trend for when or how framings were used
-  - Median of 3 framings mentioned
-  - Some papers did not include any coded framings, but still built on prior work
+- Most frequent mentions:
+  - Scaffolding
+  - Cognitive Load Theory
+  - Metacognition
+  - Self-regulated learning
+- No clear trend of how many framings used
 - Still need to understand connections between cited research and tool features
 
 <!--
-TODO: Avoid criticism of tools on this slide
-TODO: Simplify bullets. If it's the weakest slide, don't talk much about it
-TODO: Capitalize metacognition
+SCRIPT: Avoid criticism of tools on this slide
+SCRIPT: Simplify bullets. If it's the weakest slide, don't talk much about it
 
 last bullet: we answered the "what", not the "how"
 
@@ -535,27 +548,33 @@ scaff 63%
 clt 36%
 meta 36%
 SRL 23%
+
+- Most frequent mentions:
+    - Scaffolding
+    - Cognitive Load Theory
+    - Metacognition
+    - Self-regulated learning
+  - High co-occurrence between all these
+- No clear trend for when or how framings were used
+  - Median of 3 framings mentioned
+  - Some papers did not include any coded framings, but still built on prior work
+- Still need to understand connections between cited research and tool features
 -->
 
 ---
 autoClicks: false
 ---
 
-# Evaluation Goals (RQ3)
+# Evaluation Goals <span class="rq-title rq3">(RQ3)</span>
 
-- Understand student perceptions
-- Understand student usage patterns
-- Measure impact on learning outcomes
-  - Many examples: 
+- Understand student (or stakeholder) perceptions
+- Understand usage patterns
+- Measure student impact
     - Post-intervention test performance
     - Changes between pre- and post-test scores
-    - Measurements of students' affective state (self-efficacy, nervousness, etc.)
+    - Affective state (self-efficacy, nervousness, etc.)
 
 <!--
-TODO: Last bullet: "Measure impact on students"
-TODO: Get rid of nested bullet "many examples"
-TODO: "Measurements of students..." change to "Students' affective state" 
-
 Good number of papers had more than one goal
 
 Sometimes depended on maturity of the tool: pilot stage (understand what students think) vs. longer-term analysis (will this help students learn CS)
@@ -564,7 +583,16 @@ Sometimes depended on maturity of the tool: pilot stage (understand what student
 autoClicks: false
 ---
 
-# Evaluation Methods (RQ3)
+# Evaluation Methods <span class="rq-title rq3">(RQ3)</span>
+
+- Post-surveys (and less common pre-surveys)
+- Logging usage data
+- Multiple evaluation methods were common
+  - 69% of papers used between 2 and 4 methods
+  - Just 2 papers had no evaluations at all
+
+<!--
+Interesting to consider low-hanging fruit on part of researchers
 
 - Post-surveys and logging usage data both common and frequently done together (also relatively easy to perform)
 - 38% of papers that included post-surveys also included pre-surveys
@@ -572,11 +600,6 @@ autoClicks: false
 - Multiple evaluation methods were common
   - 69% of papers used between 2 and 4 methods
   - Just 2 papers had no evaluations at all
-
-<!--
-TODO: Bullets are script, shorten them
-
-Interesting to consider low-hanging fruit on part of researchers
 -->
 
 ---
@@ -585,19 +608,19 @@ Interesting to consider low-hanging fruit on part of researchers
 
 <div class="rec-grid">
 
-  <div class="info-card card-blue" v-click.fade-in>
+  <div class="info-card card-teal" v-click.fade-in>
     <ph-question class="rec-icon" />
     <h3>Start with the problem, not the tool</h3>
   </div>
 
-  <div class="info-card card-green" v-click.fade-in>
+  <div class="info-card card-orange" v-click.fade-in>
     <ph-lego class="rec-icon" />
     <h3>Build on what the field already knows</h3>
   </div>
 
   <div class="info-card card-yellow" v-click.fade-in>
     <ph-magnifying-glass class="rec-icon" />
-    <h3>Investigate the gaps</h3>
+    <h3>Investigate<br>the gaps</h3>
   </div>
 
   <div class="info-card card-purple" v-click.fade-in>
@@ -618,12 +641,12 @@ Interesting to consider low-hanging fruit on part of researchers
 .info-card {
   box-sizing: border-box;
   min-height: 0;
-  padding: 16px;
+  padding: 56px 16px 16px;
   border-radius: 12px;
   color: #263238;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
 }
@@ -640,8 +663,8 @@ Interesting to consider low-hanging fruit on part of researchers
   margin-bottom: 0.85rem;
   flex-shrink: 0;
 }
-.card-blue   { background: #e3efff; }
-.card-green  { background: #e2f4e8; }
+.card-teal   { background: #ddf5f2; }
+.card-orange { background: #ffe8d6; }
 .card-yellow { background: #fff3cd; }
 .card-purple { background: #eee5ff; }
 .rec-grid :deep(.slidev-vclick-target) {
@@ -650,16 +673,14 @@ Interesting to consider low-hanging fruit on part of researchers
 </style>
 
 <!--
-TODO: vertical align icons
-
 Start with the problem, not the tool
-- Resist the urge to build a solution that doesn’t address a specific problem 
+- Understand what would best support students (it might not always be GenAI)
 - Don't integrate GenAI tools into your course without a meaningful justification 
 - Apply principles from learner-centered design, HCI, & needsfinding
 
 Build on what the field already knows
 - Understand what other tools have gotten right and wrong already
-- Meet the minimum standards for a quality custom tool (prompt engineering, filtering out bad responses, minimizing hallucinations, etc.)
+- Consider expanding the existing tool literature (replication studies, follow-ups, new features, etc.)
 - Make meaningful connections to prior research in CSEd, learning science, cognitive science, and other fields
 
 Investigate the gaps
@@ -687,9 +708,10 @@ autoClicks: false
 
 <div class="summary-bullets">
 
-- GenAI-powered postsecondary CSEd tools are one of many strategies to regulate GenAI use
-- Tools integrate pedagogical features to promote learning and limit the pitfalls of commercial GenAI
-- Tools are contextualized by a wide range of educational framings and many evaluation strategies
+- Custom tools are one of many instructional strategies to regulate GenAI
+- Tools use <span class="hl-blue">pedagogical features</span> to support learning
+- Work is informed by <br><span class="hl-pink">educational framings</span>
+- <span class="hl-green">Evaluations</span> adopt many goals and methods
 - Consider the problem at hand, prior research, and student alternatives when making the decision to develop a tool
 
 </div>
@@ -698,8 +720,9 @@ autoClicks: false
 
 <div class="qr-panel">
   <p class="qr-caption">GenAI-Powered Postsecondary Computer Science Education Tools: A Systematic Literature Review</p>
-  <div class="qr-placeholder">QR code</div>
+  <img class="qr-code" src="/misc/qrcode.png" alt="QR code for the paper" />
   <p class="qr-email"><a href="mailto:owen.sizemore@duke.edu">owen.sizemore@duke.edu</a></p>
+  <p class="qr-email"><a href="https://duke.is/sizemore-kc26-genai">duke.is/sizemore-kc26-genai</a></p>
 </div>
 
 <style>
@@ -711,6 +734,9 @@ autoClicks: false
 }
 .summary-bullets ul {
   margin: 0;
+}
+.summary-bullets li {
+  margin-bottom: 0.9rem;
 }
 .qr-panel {
   height: 100%;
@@ -724,19 +750,15 @@ autoClicks: false
   margin: 0;
   padding: 0 1.5rem 1.25rem;
   text-align: center;
-  font-size: 1.05rem;
+  font-size: inherit;
   line-height: 1.35;
 }
-.qr-placeholder {
+.qr-code {
   width: 11rem;
   height: 11rem;
-  border: 2px dashed #9aa5b1;
+  object-fit: contain;
+  border: 2px solid #263238;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #9aa5b1;
-  font-size: 0.95rem;
 }
 .qr-email {
   margin: 0.85rem 0 0;
@@ -751,7 +773,13 @@ autoClicks: false
 
 <!--
 TODO: shorten bullets
-TODO: Add short link to paper in addition to QR code
+
+- GenAI-powered postsecondary CSEd tools are one of many strategies to regulate GenAI use
+- Tools integrate pedagogical features to promote learning and limit the pitfalls of commercial GenAI
+- Tools are contextualized by a wide range of educational framings and many evaluation strategies
+- Consider the problem at hand, prior research, and student alternatives when making the decision to develop a tool
+
+Scan the QR code and let me know what you think - if you love it, great, if you hate it, maybe wait until after the Q&A to tell me that
 -->
 
 ---
@@ -806,3 +834,9 @@ TODO: Add short link to paper in addition to QR code
 Backup slide
 -->
 ---
+
+# Inclusion/Exclusion Criteria
+
+<div style="width:500px; margin:auto;">
+    <img src="/misc/icec.png" width="400"/>
+</div>

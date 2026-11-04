@@ -133,8 +133,8 @@ onBeforeUnmount(() => {
       <div class="spectrum-axis" v-click="1">
         <svg ref="svgEl" class="spectrum-svg" />
         <div class="spectrum-labels">
-          <span>less AI</span>
-          <span>more AI</span>
+          <span>No AI use</span>
+          <span>Lots of AI use</span>
         </div>
       </div>
     </div>
@@ -147,6 +147,7 @@ onBeforeUnmount(() => {
   margin-left: -3.5rem;
   margin-right: -3.5rem;
   margin-top: 0.6rem;
+  padding: 1.75rem 2.5rem 0;
 }
 .spectrum-plot {
   position: relative;

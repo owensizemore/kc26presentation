@@ -28,7 +28,7 @@ const { currentPage, total } = useNav()
   right: 1.5rem;
   bottom: 0.5rem;
   font-size: 0.875rem;
-  opacity: 0.5;
+  opacity: calc(0.5 * var(--show-page-number));
   pointer-events: none;
   z-index: 51;
 }

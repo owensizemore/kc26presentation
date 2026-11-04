@@ -10,6 +10,8 @@
      to 1 to draw the red cutoff box, 0 to hide it. */
   --venue-blank: 0.25;
   --show-cutoff: 0;
+  /* Set --show-page-number to 1 to show slide numbers, 0 to hide them. */
+  --show-page-number: 0;
 }
 
 /* Fira Code (the theme's mono font) ligates sequences like ->, ==, >= into
@@ -113,3 +115,31 @@ html.dark .callout {
    a space-separated string, e.g. `class: type-compact tight-bullets`. */
 .slidev-layout.tight-bullets > ul > li,
 .slidev-layout.tight-bullets > ol > li { margin-bottom: 0.25rem; }
+
+/* Codebook category highlight colors (RQ1 blue, RQ2 pink, RQ3 green). */
+.hl-blue,
+.slidev-layout h1 .rq-title.rq1 { background: #e3efff; }
+.hl-pink,
+.slidev-layout h1 .rq-title.rq2 { background: #ffe5ec; }
+.hl-green,
+.slidev-layout h1 .rq-title.rq3 { background: #e2f4e8; }
+
+.hl-blue,
+.hl-pink,
+.hl-green {
+  padding: 0.05em 0.25em;
+  border-radius: 0.25em;
+}
+
+/* Smaller highlighted RQ tags in titles. */
+.slidev-layout h1 .rq-title {
+  display: inline-block;
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  vertical-align: middle;
+  padding: 0.2em 0.45em;
+  border-radius: 0.35em;
+  white-space: nowrap;
+}
