@@ -165,11 +165,13 @@ Before we started working on this lit review, we were curious about the question
 <!--
 SCRIPT: shorten script if needed, could make my point in 30 seconds
 
-I don't need to remind you all of the challenges that have been presented by the proliferation of GenAI in postsecondary CS classrooms, which span concerns about overreliance, impacts on critical thinking and problem-solving skills, and ensuring that students are prepared for advanced work and careers in computer science.
+Question comes with a lot of challenges
 
-What I do want to discuss though is how we categorize strategies from instructors to address these challenges. We can think of it as a spectrum where on one side we are encouraging less AI use and on the other more AI use. Some responses by instructors have been very heavy-handed, such as by attempting to ban the use of GenAI in classrooms entirely, or allowing unbridled use without any restrictions or guardrails. 
+Consensus that GenAI can be harmful to students, less consensus on what to do about it
 
-Both of these approaches come with risks, so we want to consider a more nuanced set of strategies where we are guiding students toward responsible AI use, acknowledging that students have access to tools like ChatGPT and Claude but also encouraging them to use the tools in a way that supports their learning.
+Spectrum of perspectives
+
+Want to consider a middle ground where we acknowledge that these tools are out there but we want to guide students to use them in ways that support their learning
 -->
 
 ---
@@ -180,14 +182,8 @@ Both of these approaches come with risks, so we want to consider a more nuanced 
 - <span v-mark.underline.green="5">Custom tools with guardrails to mitigate irresponsible GenAI use</span>
 
 <!--
-SCRIPT shorten this slide if needed. Turn bullets into script and make shorter bullets for the slide itself
-
-So what are some examples of strategies to support responsible AI use? There are many approaches
-
-We wanted to explore one specific approach, which is the use of custom tools that offer an alternative to commercial tools like ChatGPT. I have a software engineering background, and I was particularly interested in what motivated educators to build custom tools and how they distinguished themselves from commercial tools.
-
+Lots of existing instructional strategies in the research:
 - Course interventions to learn new skills (prompting, evaluating GenAI output, etc.) 
-- Assignments demonstrating the strengths/weaknesses of GenAI
 - Student reflections to encourage thoughtful GenAI use
 - Custom tools with guardrails to scaffold learning and mitigate irresponsible GenAI use
 -->
@@ -295,16 +291,11 @@ flowchart LR
 </style>
 
 <!--
-SCRIPT shorten script
-SCRIPT don't read out block names. Could pause for audience to consume slide
+At their core, tools behave like commercial ones, but with additional guardrails
 
-So what do these tools look like?
+Patterns we observed across most/all tools are in bold
 
-Within our literature review we observed a wide range of tool designs and architectures, but the most common was a text-based interface similar to ChatGPT or Claude, but with some additional components and guardrails added on the back end.
-
-The blocks with bold text and a thicker outline are core components that were found in most tools, while the other blocks were components that were sometimes added for additional functionality.
-
-Begins with student prompt, might be additional context as well. Inputs could be filtered to avoid off-topic responses, and the sanitized input is combined with system prompts and a knowledge base and fed to the LLM endpoint, such as the OpenAI API. From there, a response was returned from the endpoint, which could be checked to ensure it addresses the students' query, and then delivered back to the student on the frontend.
+Take an input from the student, apply some prompting to constrain the output, feed it to an LLM, give the response to students
 -->
 
 ---
@@ -323,8 +314,9 @@ autoClicks: false
 </style>
 
 <!--
-To better understand GenAI-powered postsecondary CSEd tools, we asked the following research questions:
+Motivated by three research questions regarding papers about tools
 -->
+
 ---
 
 ## Literature Review Methodology 
@@ -344,11 +336,9 @@ flowchart TD
 </div>
 
 <!--
-SCRIPT: Don't discuss IC/EC here
+Followed best practices from Kitchenham & Charters & PRISMA
 
-To structure our literature review, we followed the practices outlined by Kitchenham and Charters as well as the PRISMA 2020 guidelines.
-
-The full details can be found in the paper itself, but I'll summarize with two key points. The first was that we started with just over 1,800 search results from various digital libraries, and finished with 72 papers that we fully analyzed. The second is that we scoped our literature review to focus specifically on postsecondary CSEd (no K-12), tools that used modern LLMs (not older ITSes and things like that), and the tools had to be student-facing, so no autograders or instructor tools
+Started with 1,800 papers, ended with 72 that we fully analyzed and coded
 -->
 
 ---
@@ -452,7 +442,9 @@ The full details can be found in the paper itself, but I'll summarize with two k
 </style>
 
 <!--
-We divided our codebook into 6 categories. Codes within categories were not mutually exclusive; for example, we coded for 8 different pedagogical features, and a tool could theoretically have all 8 or none of them
+We divided our codebook into 6 categories
+
+Codes within categories were not mutually exclusive; for example, we coded for 8 different pedagogical features, and a tool could theoretically have all 8 or none of them
 
 The top 3 addressed RQ1, educational framings addresses RQ2, and the last two address RQ3
 -->
@@ -468,13 +460,9 @@ autoClicks: false
 - Lack of scalable help-seeking in classrooms
 
 <!--
-SCRIPT consider using bullet points as script and shorten actual bullets
+Instructors want the benefits of ChatGPT's natural language capabilities (personalization, ability to recognize a student's context), but see risks if guardrails aren't put in place
 
-Two most commonly identified motivations were desire to provide personalized support and concern that LLMs lead to overreliance
-
-These two themes overlap with each other, as ChatGPT and other tools can offer that personalized support, but doesn't always do so in a way that supports learning. Further, we observed instructors desiring a tool whose responses are tailored to their specific course context, based on concerns that commercial tools don't know what prior knowledge a student has and what they're learning in class
-
-We also observed some instructors responding to high enrollment intro-sequence CS courses. There was an acknowledgement that the limited number of course staff can't provide 1 on 1 support to everyone, so providing that support in an automated way through a GenAI-powered tool was a promising alternative
+Some instructors are also concerned about scaling their support to large CS enrollments
 -->
 
 ---
@@ -497,14 +485,11 @@ autoClicks: false
 - Mostly standalone web apps
 
 <!--
-You're going to be hearing the term scaffolding a lot here, but this concept is very much present in how the tools function. 
-Scaffolding presents itself in different ways: system prompts telling the LLM to structure its response to not give answers, post-response checks to make sure the output doesn't include lines of code, etc.
+Scaffolded feedback: system prompts, input pre-processing, output post-processing
 
-Adaptive feedback relates to this idea and is similar to how students interact with commercial tools: sometimes explicit (student makes specific request and LLM adjusts to it), other times implicit (tool holds on to conversation history and that informs future interactions)
+Curated practice/problem sets so the students are using the tools in a more structured/guided way
 
-Third bullet refers to the use of RAG or databases to provide richer context to the tool. One example: text transcriptions of lectures given to LLM along with instructions to reference the lectures when delivering responses. Helps the tool's responses stay relevant to the student and the course
-
-With delivery method, most often saw tools being accessed from standalone websites just like ChatGPT or Claude, but a few of them embedded int a course forum or LMS and fewer still were integrated closely into a coding environment through IDE extension or command-line tool
+Using RAG/connected database that the LLM can reference when responding to students
 
 81% scaff
 57% adapt
@@ -523,26 +508,14 @@ autoClicks: false
   - Cognitive Load Theory
   - Metacognition
   - Self-regulated learning
-- No clear trend of how many framings used
-- Still need to understand connections between cited research and tool features
+- Connection between framings and tool features still unclear
 
 <!--
-SCRIPT: Avoid criticism of tools on this slide
-SCRIPT: Simplify bullets. If it's the weakest slide, don't talk much about it
+Coded for both formal theories and informal terms/buzzwords
 
-last bullet: we answered the "what", not the "how"
+4 most common terms that frequently appeared together
 
-Potentially split this into 2 slides
-Remove percentages here, but scaffolding still useful
-"Disproved" is technically not true, should remove this bullet
-
-We looked for mentions of 13 different terms pertaining to the literature in CSEd - scaffolding, self-efficacy, self-regulated learning, etc.
-
-Four framings we observed most often, and I'm using the term "framing" because these terms weren't always qualified with citations - hard to pin down something like "scaffolding", which is very broad
-
-We didn't identify any overarching trends about when or how these framings were used, but generally the use of them was quite diverse. We came in with a slightly cynical assumption that papers wouldn't have thorough framings
-
-Papers with lots of buzzwords and references are more likely to be published
+Wasn't always clear how a paper's use of educational terminology informed features; some papers made strong connections, others didn't
 
 scaff 63%
 clt 36%
@@ -558,7 +531,7 @@ SRL 23%
 - No clear trend for when or how framings were used
   - Median of 3 framings mentioned
   - Some papers did not include any coded framings, but still built on prior work
-- Still need to understand connections between cited research and tool features
+- Connections between cited research and tool features
 -->
 
 ---
@@ -567,18 +540,18 @@ autoClicks: false
 
 # Evaluation Goals <span class="rq-title rq3">(RQ3)</span>
 
-- Understand student (or stakeholder) perceptions
+- Understand student perceptions
 - Understand usage patterns
 - Measure student impact
-    - Post-intervention test performance
-    - Changes between pre- and post-test scores
+    - Pre-/post-test performance
     - Affective state (self-efficacy, nervousness, etc.)
 
 <!--
-Good number of papers had more than one goal
+Most commonly wanted to understand how students felt about a tool and how they used it
 
-Sometimes depended on maturity of the tool: pilot stage (understand what students think) vs. longer-term analysis (will this help students learn CS)
+Less common was wanting to see if the tool had a measurable impact on students, either through changes in test performance or more qualitative metrics like self-efficacy or nervousness
 -->
+
 ---
 autoClicks: false
 ---
@@ -586,20 +559,23 @@ autoClicks: false
 # Evaluation Methods <span class="rq-title rq3">(RQ3)</span>
 
 - Post-surveys (and less common pre-surveys)
-- Logging usage data
-- Multiple evaluation methods were common
-  - 69% of papers used between 2 and 4 methods
-  - Just 2 papers had no evaluations at all
+- Usage data analysis
+- Think-alouds/other lab studies
 
 <!--
+(WRAP UP BY 7 MINUTES)
+
+Many different evaluation methods
+
+Most common were post-surveys and analyzing usage data
+
+Less common was the use of think-alouds and other lab studies
+
 Interesting to consider low-hanging fruit on part of researchers
 
-- Post-surveys and logging usage data both common and frequently done together (also relatively easy to perform)
-- 38% of papers that included post-surveys also included pre-surveys
-  - Less emphasis on measuring changes, just want to understand how students felt about the tool
-- Multiple evaluation methods were common
-  - 69% of papers used between 2 and 4 methods
-  - Just 2 papers had no evaluations at all
+Multiple evaluation methods were common (most between 2 and 4 methods)
+
+Only 2 papers had no evaluations
 -->
 
 ---
@@ -772,12 +748,9 @@ autoClicks: false
 </style>
 
 <!--
-TODO: shorten bullets
+To summarize, we conducted an SLR on GenAI-powered postsecondary CSEd tools, examining motivations and approaches, use of educational framings, and evaluations.
 
-- GenAI-powered postsecondary CSEd tools are one of many strategies to regulate GenAI use
-- Tools integrate pedagogical features to promote learning and limit the pitfalls of commercial GenAI
-- Tools are contextualized by a wide range of educational framings and many evaluation strategies
-- Consider the problem at hand, prior research, and student alternatives when making the decision to develop a tool
+We also offered recommendations for researchers building tools
 
 Scan the QR code and let me know what you think - if you love it, great, if you hate it, maybe wait until after the Q&A to tell me that
 -->
