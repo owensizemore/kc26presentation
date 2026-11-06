@@ -163,8 +163,6 @@ Before we started working on this lit review, we were curious about the question
 <SpectrumArrow />
 
 <!--
-SCRIPT: shorten script if needed, could make my point in 30 seconds
-
 Question comes with a lot of challenges
 
 Consensus that GenAI can be harmful to students, less consensus on what to do about it
